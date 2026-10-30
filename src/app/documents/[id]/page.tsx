@@ -231,8 +231,8 @@ export default function DocumentEditorPage() {
 
   return (
     <div className="space-y-6">
-      {/* Top Action & Navigation Bar - Sticky right below Navbar */}
-      <div className="sticky top-16 z-30 flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-slate-200/90 shadow-sm">
+      {/* Top Action & Navigation Bar - Sticky on desktop right below Navbar with clean offset */}
+      <div className="static md:sticky top-16 z-30 flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-slate-200/90 shadow-sm">
         <div className="flex items-center gap-3">
           <Link
             href="/documents"

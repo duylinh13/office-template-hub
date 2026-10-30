@@ -91,7 +91,7 @@ export function DocumentEditor({
         <div
           role="toolbar"
           aria-label="Rich-text editing tools"
-          className="sticky top-16 md:top-[128px] z-20 flex flex-wrap items-center gap-1 px-4 py-2.5 bg-slate-50/95 backdrop-blur-md border-b border-slate-200 rounded-t-xl shadow-xs"
+          className="sticky top-16 md:top-[152px] z-20 flex flex-wrap items-center gap-1 px-4 py-2.5 bg-slate-50/95 backdrop-blur-md border-b border-slate-200 rounded-t-xl shadow-xs"
         >
           {/* Paragraph / Normal text */}
           <button
