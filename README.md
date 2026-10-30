@@ -413,7 +413,7 @@ As required by modern recruitment transparency standards:
 - [x] Presentation Template Library with slide counts and metadata.
 - [x] Slide deck inspector with carousel and arrow key navigation (`←` / `→`).
 - [x] Secure server-side PPTX download with path traversal prevention.
-- [x] Complete Vitest test suite (18 automated tests passing).
+- [x] Complete Vitest test suite (19 automated tests passing).
 
 ### Out of Scope by Design
 - User authentication and multi-tenant accounts (single-workspace recruitment MVP).
