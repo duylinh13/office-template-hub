@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <rect width="400" height="240" rx="8" fill="#f8fafc"/>
+  <g transform="translate(40, 20)">
+    <rect width="320" height="180" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="320" height="35" rx="6" fill="#1e3a8a"/>
+    <rect x="20" y="12" width="120" height="10" rx="3" fill="#ffffff"/>
+    <rect x="20" y="55" width="160" height="14" rx="3" fill="#0f172a"/>
+    <!-- Financial bar chart -->
+    <rect x="20" y="85" width="280" height="75" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="40" y="125" width="24" height="30" rx="2" fill="#3b82f6"/>
+    <rect x="80" y="110" width="24" height="45" rx="2" fill="#10b981"/>
+    <rect x="120" y="118" width="24" height="37" rx="2" fill="#3b82f6"/>
+    <rect x="160" y="95" width="24" height="60" rx="2" fill="#10b981"/>
+    <rect x="200" y="105" width="24" height="50" rx="2" fill="#3b82f6"/>
+    <rect x="240" y="90" width="24" height="65" rx="2" fill="#10b981"/>
+  </g>
+</svg>

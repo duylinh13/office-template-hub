@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <defs>
+    <linearGradient id="propBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff"/>
+      <stop offset="100%" stop-color="#f3e8ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="400" height="260" rx="8" fill="url(#propBg)"/>
+  <g transform="translate(60, 25)" filter="url(#shadow)">
+    <rect width="280" height="210" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="280" height="42" rx="6" fill="#7c3aed"/>
+    <rect x="25" y="16" width="150" height="12" rx="3" fill="#ffffff"/>
+    <rect x="25" y="60" width="90" height="8" rx="2" fill="#334155"/>
+    <rect x="25" y="76" width="230" height="5" rx="2" fill="#cbd5e1"/>
+    <rect x="25" y="86" width="210" height="5" rx="2" fill="#cbd5e1"/>
+    {/* Table mock */}
+    <rect x="25" y="105" width="230" height="75" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="25" y="105" width="230" height="20" rx="4" fill="#f1f5f9"/>
+    <rect x="35" y="112" width="60" height="6" rx="2" fill="#64748b"/>
+    <rect x="130" y="112" width="40" height="6" rx="2" fill="#64748b"/>
+    <rect x="200" y="112" width="40" height="6" rx="2" fill="#64748b"/>
+    <line x1="25" y1="145" x2="255" y2="145" stroke="#e2e8f0"/>
+    <rect x="35" y="133" width="75" height="5" rx="2" fill="#94a3b8"/>
+    <rect x="205" y="133" width="35" height="5" rx="2" fill="#7c3aed"/>
+    <line x1="25" y1="162" x2="255" y2="162" stroke="#e2e8f0"/>
+    <rect x="35" y="150" width="65" height="5" rx="2" fill="#94a3b8"/>
+    <rect x="205" y="150" width="35" height="5" rx="2" fill="#7c3aed"/>
+  </g>
+</svg>

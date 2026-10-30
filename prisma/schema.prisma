@@ -1,0 +1,41 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Template {
+  id            String   @id @default(cuid())
+  type          String   @default("DOCUMENT") // "DOCUMENT" | "PRESENTATION"
+  name          String
+  category      String
+  description   String
+  thumbnailPath String
+  filePath      String?
+  content       String   // HTML or structured template initial content
+  slides        String?  // JSON slides for presentation templates
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  drafts        Draft[]
+
+  @@index([type])
+  @@index([category])
+  @@index([name])
+}
+
+model Draft {
+  id          String    @id @default(cuid())
+  templateId  String?
+  template    Template? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  type        String    @default("DOCUMENT") // "DOCUMENT" | "PRESENTATION"
+  title       String
+  content     String    // HTML or JSON content of the draft document
+  slides      String?   // JSON slides for presentation drafts
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([type])
+}
