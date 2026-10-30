@@ -85,13 +85,13 @@ export function DocumentEditor({
   }
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col">
+    <div className="bg-white rounded-xl border border-slate-200/90 shadow-sm flex flex-col">
       {/* Sticky Editor Toolbar */}
       {editable && (
         <div
           role="toolbar"
           aria-label="Rich-text editing tools"
-          className="sticky top-16 z-20 flex flex-wrap items-center gap-1 px-4 py-2 bg-slate-50/95 backdrop-blur-md border-b border-slate-200"
+          className="sticky top-16 md:top-[128px] z-20 flex flex-wrap items-center gap-1 px-4 py-2.5 bg-slate-50/95 backdrop-blur-md border-b border-slate-200 rounded-t-xl shadow-xs"
         >
           {/* Paragraph / Normal text */}
           <button

@@ -161,6 +161,22 @@ describe("Document Drafts, Immutability & DOCX Export", () => {
     expect(buffer[1]).toBe(0x4b);
   });
 
+  it("export preserves newly added custom text, spans, blockquotes, and strikethrough without dropping content", async () => {
+    const customEditedHtml = `
+      <h1>Revised Proposal Document</h1>
+      <p><span class="highlight">Newly added critical section:</span> We propose an updated cloud rollout.</p>
+      <blockquote><p>Quote from client: Deliver within 90 days.</p></blockquote>
+      <p>Original timeline: <s>180 days</s> is replaced by <strong>90 days</strong>.</p>
+    `;
+
+    const docxDoc = convertHtmlToDocx("Revised Proposal", customEditedHtml);
+    const buffer = await Packer.toBuffer(docxDoc);
+
+    expect(buffer.length).toBeGreaterThan(2000);
+    expect(buffer[0]).toBe(0x50);
+    expect(buffer[1]).toBe(0x4b);
+  });
+
   it("querying a missing draft returns null / 404 behavior", async () => {
     const nonExistent = await db.draft.findUnique({
       where: { id: "non-existent-draft-cuid-999" },

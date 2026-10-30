@@ -140,15 +140,37 @@ export default function DocumentEditorPage() {
   const handleExportDocx = async () => {
     try {
       setIsExporting(true);
+      // Persist latest state
       await handleSave();
 
-      const downloadUrl = `/api/documents/${id}/export`;
+      // Direct blob export with current editor state to guarantee latest edits are downloaded
+      const res = await fetch(`/api/documents/${id}/export`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, content }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Export failed with status ${res.status}`);
+      }
+
+      const blob = await res.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.href = downloadUrl;
-      link.setAttribute("download", `${title.replace(/\s+/g, "_") || "document"}.docx`);
+      link.href = blobUrl;
+      const safeFilename = `${
+        title
+          .replace(/[^\w\s\-\u00C0-\u1EF9]/gi, "")
+          .trim()
+          .replace(/\s+/g, "_") || "document"
+      }.docx`;
+      link.setAttribute("download", safeFilename);
       document.body.appendChild(link);
       link.click();
+      window.URL.revokeObjectURL(blobUrl);
       document.body.removeChild(link);
+
+      setSaveStatus("saved");
     } catch (err) {
       console.error(err);
       alert("Error occurred while generating DOCX file.");
@@ -209,8 +231,8 @@ export default function DocumentEditorPage() {
 
   return (
     <div className="space-y-6">
-      {/* Top Action & Navigation Bar */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm">
+      {/* Top Action & Navigation Bar - Sticky right below Navbar */}
+      <div className="sticky top-16 z-30 flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-slate-200/90 shadow-sm">
         <div className="flex items-center gap-3">
           <Link
             href="/documents"
